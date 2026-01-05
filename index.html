@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panduan Orientasi Pengurus PGRI - Kabupaten Pandeglang</title>
+    <title>Orientasi Pengurus Cabang - PGRI Kabupaten Pandeglang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         
         :root {
             --pgri-red: #e11d48;
@@ -15,150 +15,100 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #f8fafc;
-            color: #334155;
-            -webkit-tap-highlight-color: transparent;
+            color: #1e293b;
             line-height: 1.6;
         }
 
-        /* Container Utama */
         .premium-card {
             background: #ffffff;
             border-radius: 24px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
-            margin-bottom: 0.75rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             overflow: hidden;
         }
 
-        /* Header Akordion Ramping */
         .accordion-header {
             cursor: pointer;
-            user-select: none;
+            padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.65rem 1.75rem; /* Lebih ramping vertikal */
+            background: #ffffff;
             transition: all 0.3s ease;
-            background-color: #ffffff;
-        }
-
-        .accordion-header:hover {
-            background-color: #f8fafc;
         }
 
         .accordion-item.active .accordion-header {
-            background-color: #f8fafc;
+            background: #f8fafc;
             border-bottom: 1px solid #f1f5f9;
         }
 
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            background: #ffffff;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 3000px;
+            max-height: 5000px;
         }
 
-        .accordion-item.active .chevron-icon {
-            transform: rotate(180deg);
-            color: var(--pgri-red);
-        }
-
-        .accordion-item.active {
-            border-color: #cbd5e1;
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
-            margin-bottom: 1.25rem;
-            margin-top: 1.25rem;
-        }
-
-        .vertical-accent {
-            position: relative;
-        }
-        .vertical-accent::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 6px;
-            background: var(--pgri-red);
-            border-radius: 24px 0 0 24px;
-            z-index: 20;
-        }
-
-        /* Stepper di dalam Akordion */
-        .step-path {
-            position: relative;
-            padding-left: 2.25rem;
-            padding-bottom: 1.25rem;
-        }
-        .step-path::before {
-            content: '';
-            position: absolute;
-            left: 11px;
-            top: 24px;
-            bottom: 0;
-            width: 2px;
-            background: #f1f5f9;
-        }
-        .step-path:last-child { padding-bottom: 0; }
-        .step-path:last-child::before { display: none; }
-        
-        .step-marker {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: #fff;
-            border: 2px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .instruction-badge {
+            background: var(--pgri-slate);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 99px;
             font-size: 0.7rem;
-            font-weight: 800;
-            z-index: 10;
-        }
-        .step-active .step-marker {
-            border-color: var(--pgri-red);
-            color: var(--pgri-red);
-            box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.06);
-        }
-
-        /* Lencana Pro */
-        .badge-capsule {
-            font-size: 0.6rem;
             font-weight: 700;
-            padding: 3px 12px;
-            border-radius: 9999px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .badge-red { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }
-        .badge-amber { background: #fffbeb; color: #92400e; border: 1px solid #fec3a7; }
-        .badge-blue { background: #f0f9ff; color: #075985; border: 1px solid #e0f2fe; }
-
-        .chevron-icon {
-            transition: transform 0.4s ease;
-            color: #94a3b8;
-            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
         }
 
-        /* Desain Modern Kartu Tujuan */
+        .reference-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .ref-box {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .ref-box h4 {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 4px;
+        }
+
+        .ref-box p {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .kajian-box {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
         .goal-grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 0.75rem; /* Gap diperkecil */
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
         @media (min-width: 768px) {
             .goal-grid { grid-template-columns: repeat(2, 1fr); }
@@ -168,44 +118,29 @@
             background: #ffffff;
             border: 1px solid #f1f5f9;
             border-radius: 18px;
-            padding: 1rem; /* Padding diperkecil */
+            padding: 1rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             transition: all 0.3s ease;
         }
-        .modern-goal-card:hover {
-            transform: translateY(-3px);
-            border-color: #e2e8f0;
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.04);
-        }
 
         .goal-icon-box {
-            width: 36px; /* Sedikit dikecilkan kontainernya */
-            height: 36px;
-            border-radius: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
-        .modern-goal-card p {
-            text-align: justify;
-            font-size: 0.85rem;
-            color: #475569;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        /* Widget Pusat Referensi Digital - Dibuat lebih Compact */
         .reference-widget {
             background: #f8fafc;
             border-radius: 20px;
             border: 1px solid #e2e8f0;
-            padding: 1.25rem; /* padding dikurangi */
-            margin-top: 1rem; /* margin dikurangi */
-            position: relative;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
         }
 
         .download-button {
@@ -219,7 +154,6 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
         }
 
         .download-button:hover {
@@ -227,349 +161,273 @@
             transform: translateY(-1px);
         }
 
-        .main-logo {
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.08));
-        }
-
-        /* Divider Elegan Ramping */
-        .elegant-divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-            margin: 1.25rem 0; /* Margin dikurangi */
+        .presentation-note {
+            background: #0f172a;
+            color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
     </style>
 </head>
-<body class="p-4 sm:p-8 lg:p-12">
+<body class="p-4 md:p-8 lg:p-12">
 
-    <main class="max-w-5xl mx-auto">
+    <main class="max-w-6xl mx-auto">
         
-        <!-- HEADER UTAMA & TUJUAN (Compact Version) -->
-        <section class="premium-card border-t-8 border-slate-900 mb-6">
-            <div class="p-6 sm:p-10">
-                <div class="text-center mb-8">
-                    <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20PGRI%20Official.png" 
-                         alt="Logo PGRI Official" 
-                         class="h-48 sm:h-64 mx-auto mb-4 main-logo transition-transform hover:scale-105 duration-500">
-                    
-                    <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight uppercase leading-tight mb-1">
+        <!-- HEADER UTAMA & TUJUAN -->
+        <section class="premium-card border-t-8 border-rose-600 mb-8 shadow-2xl">
+            <div class="p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20PGRI%20Official.png" alt="Logo PGRI" class="h-32 md:h-44 mx-auto mb-6">
+                    <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-2">
                         Orientasi Pengurus Cabang
                     </h1>
-                    <p class="text-md sm:text-xl font-semibold text-rose-600 tracking-[0.2em] uppercase opacity-90 mb-4">
+                    <p class="text-lg md:text-xl font-bold text-rose-600 tracking-[0.25em] uppercase mb-8">
                         PGRI Kabupaten Pandeglang
                     </p>
                 </div>
 
-                <!-- Section Tujuan Modern Compact -->
+                <!-- TUJUAN -->
                 <div class="space-y-4">
-                    <div class="text-center">
-                        <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Tujuan</h2>
+                    <div class="text-center mb-6">
+                        <h2 class="text-xl font-bold text-slate-800">Tujuan Strategis</h2>
                     </div>
 
                     <div class="goal-grid">
-                        <div class="modern-goal-card shadow-sm">
-                            <div class="goal-icon-box bg-rose-50 text-rose-600 shadow-sm">
+                        <div class="modern-goal-card shadow-sm border-l-4 border-l-rose-500">
+                            <div class="goal-icon-box bg-rose-50 text-rose-600">
                                 <i class="fas fa-fingerprint"></i>
                             </div>
-                            <p>Memperkuat pemahaman mendasar mengenai jati diri, visi, dan misi perjuangan PGRI sebagai organisasi profesi.</p>
+                            <p class="text-xs font-semibold text-slate-600">Memperkuat pemahaman mendasar mengenai jati diri, visi, dan misi perjuangan PGRI sebagai organisasi profesi.</p>
                         </div>
-                        <div class="modern-goal-card shadow-sm">
-                            <div class="goal-icon-box bg-blue-50 text-blue-600 shadow-sm">
+                        <div class="modern-goal-card shadow-sm border-l-4 border-l-blue-500">
+                            <div class="goal-icon-box bg-blue-50 text-blue-600">
                                 <i class="fas fa-gavel"></i>
                             </div>
-                            <p>Meningkatkan penguasaan kaidah konstitusi organisasi (AD/ART) secara mendalam untuk tata kelola yang tertib.</p>
+                            <p class="text-xs font-semibold text-slate-600">Meningkatkan penguasaan kaidah konstitusi organisasi (AD/ART) secara mendalam untuk tata kelola yang tertib.</p>
                         </div>
-                        <div class="modern-goal-card shadow-sm">
-                            <div class="goal-icon-box bg-emerald-50 text-emerald-600 shadow-sm">
+                        <div class="modern-goal-card shadow-sm border-l-4 border-l-emerald-500">
+                            <div class="goal-icon-box bg-emerald-50 text-emerald-600">
                                 <i class="fas fa-hand-holding-heart"></i>
                             </div>
-                            <p>Membangun kesadaran kolektif pengurus dalam memberikan pelayanan perlindungan anggota yang responsif.</p>
+                            <p class="text-xs font-semibold text-slate-600">Membangun kesadaran kolektif pengurus dalam memberikan pelayanan perlindungan anggota yang responsif.</p>
                         </div>
-                        <div class="modern-goal-card shadow-sm">
-                            <div class="goal-icon-box bg-amber-50 text-amber-600 shadow-sm">
+                        <div class="modern-goal-card shadow-sm border-l-4 border-l-amber-500">
+                            <div class="goal-icon-box bg-amber-50 text-amber-600">
                                 <i class="fas fa-link"></i>
                             </div>
-                            <p>Menyelaraskan langkah strategis tata kelola organisasi antara tingkat Cabang dan Kabupaten demi sinergitas.</p>
-                        </div>
-                    </div>
-
-                    <div class="elegant-divider"></div>
-
-                    <!-- Pusat Referensi Digital Compact -->
-                    <div class="reference-widget">
-                        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-rose-600 text-xl border border-slate-100">
-                                    <i class="fas fa-book-atlas"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-md font-bold text-slate-900 leading-tight">Pusat Referensi Digital</h3>
-                                    <p class="text-xs text-slate-500 font-medium">Naskah Asli AD ART PGRI 2024 V.02.PH.PB202506002</p>
-                                </div>
-                            </div>
-                            <a href="https://drive.google.com/file/d/1wbwDCKFp0nTuVjLb7IyIrvI42vQINarp/view?usp=sharing" target="_blank" class="download-button w-full md:w-auto justify-center">
-                                <i class="fas fa-file-pdf"></i>
-                                Buka Dokumen Utama
-                            </a>
+                            <p class="text-xs font-semibold text-slate-600">Menyelaraskan langkah strategis tata kelola organisasi antara tingkat Cabang dan Kabupaten demi sinergitas.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Informasi Tambahan Compact -->
-                <div class="mt-6 p-4 bg-slate-900 rounded-xl flex items-center gap-4 shadow-lg">
-                    <div class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-info text-[10px]"></i>
+                <!-- REFERENSI DIGITAL (MUNCUL LAGI) -->
+                <div class="reference-widget">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-rose-600 text-xl border border-slate-100">
+                                <i class="fas fa-book-atlas"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-md font-bold text-slate-900 leading-tight">Pusat Referensi Digital</h3>
+                                <p class="text-xs text-slate-500 font-medium">Bahan Kajian: Naskah Asli AD/ART PGRI Kongres XXIII 2024</p>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1wbwDCKFp0nTuVjLb7IyIrvI42vQINarp/view?usp=sharing" target="_blank" class="download-button w-full md:w-auto justify-center">
+                            <i class="fas fa-file-pdf"></i>
+                            Buka Dokumen Utama
+                        </a>
                     </div>
-                    <p class="text-[0.75rem] text-slate-300 font-medium">
-                        Aktivitas utama orientasi adalah mengkaji kaidah AD/ART. Mind map merupakan instrumen visualisasi atas pemahaman kaidah tersebut.
-                    </p>
+                </div>
+
+                <div class="mt-8 presentation-note">
+                    <i class="fas fa-info-circle text-rose-500 text-xl"></i>
+                    <p class="text-justify italic"><b>Metode Kajian:</b> Gunakan <i>Mind Map</i> sebagai alat bantu visual untuk merangkum hasil kajian kelompok sebelum dipresentasikan secara individu.</p>
                 </div>
             </div>
         </section>
 
-        <!-- AREA INSTRUKSI KELOMPOK -->
-        <div class="space-y-2 mt-4">
+        <!-- AREA KAJIAN KELOMPOK -->
+        <div class="space-y-4">
 
             <!-- KELOMPOK 1 -->
-            <div class="premium-card vertical-accent accordion-item" id="kel-1">
+            <div class="premium-card accordion-item active" id="kel-1">
                 <div class="accordion-header" onclick="toggleAccordion('kel-1')">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fas fa-landmark text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl shadow-lg">
+                            <i class="fas fa-landmark"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">Kelompok 1: Normatif – Ideologis</h2>
-                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-widest mt-0.5">Rujukan: Bab I, II, III (Pasal 1–7)</p>
+                            <h2 class="text-xl font-extrabold text-slate-800">01. Kajian Jati Diri & Visi Perjuangan</h2>
+                            <p class="text-xs text-rose-600 font-bold uppercase tracking-widest mt-1">Fokus: Jati Diri, Arah Perjuangan, Visi & Mimpi Organisasi</p>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
+                    <i class="fas fa-chevron-down text-slate-300"></i>
                 </div>
-                <div class="accordion-content px-8 sm:px-14 pb-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border-t border-slate-50 pt-8 mt-2">
-                        <div class="lg:col-span-7 space-y-1">
-                            <div class="step-path step-active">
-                                <span class="step-marker">1</span>
-                                <span class="badge-capsule badge-red mb-3">Prioritas: Kajian AD/ART</span>
-                                <p class="text-sm font-semibold text-slate-700 leading-relaxed">
-                                    Mengkaji secara tekstual dan kontekstual Bab I, II, dan III (Pasal 1–7). Penguasaan kaidah ini adalah landasan utama diskusi.
-                                </p>
-                            </div>
-                            <div class="step-path">
-                                <span class="step-marker">2</span>
-                                <span class="badge-capsule badge-amber mb-3">Diskusi: Pertanyaan Pemantik</span>
-                                <div class="space-y-4 mt-4">
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100 text-justify font-medium">
-                                        Identifikasi 3 pasal paling krusial bagi cabang. Jelaskan bunyi inti pasal dan maknanya bagi pengurus.
-                                    </p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100 text-justify font-medium">
-                                        Mengapa PGRI disebut organisasi profesi, perjuangan, dan ketenagakerjaan? Apa risikonya jika cabang hanya bersifat seremonial?
-                                    </p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100 text-justify font-medium">
-                                        Rumuskan 1 prinsip ideologis fundamental yang wajib dipegang teguh oleh pengurus cabang.
-                                    </p>
-                                </div>
-                            </div>
+                <div class="accordion-content p-8 pt-2">
+                    <div class="instruction-badge">Referensi AD/ART 2024</div>
+                    <div class="reference-grid">
+                        <div class="ref-box">
+                            <h4>Anggaran Dasar (AD)</h4>
+                            <p>Bab I, II, III, dan IV</p>
                         </div>
-                        <div class="lg:col-span-5">
-                            <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 h-full shadow-inner text-center">
-                                <span class="badge-capsule badge-blue mb-5">Output: Mind Map</span>
-                                <p class="text-[0.8rem] text-slate-500 leading-relaxed mb-6 font-medium">
-                                    Visualisasikan hasil kajian jati diri organisasi ke dalam peta pikiran yang kreatif dan informatif.
-                                </p>
-                                <div class="flex items-center justify-center gap-3 text-rose-600 font-bold text-[0.7rem] uppercase tracking-wider">
-                                    <i class="fas fa-tools"></i> Media: Kertas Plano / Canva
-                                </div>
-                            </div>
+                        <div class="ref-box">
+                            <h4>Anggaran Rumah Tangga (ART)</h4>
+                            <p>Bab I, II, dan III</p>
                         </div>
+                    </div>
+
+                    <div class="kajian-box">
+                        <h4 class="font-bold text-slate-900 mb-3 underline">Materi Kajian Utama:</h4>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-3">
+                            <li>Analisis mendalam makna PGRI sebagai organisasi profesi, perjuangan, dan ketenagakerjaan.</li>
+                            <li>Pemetaan Visi dan Misi terbaru: Bagaimana arah perjuangan PGRI dalam 5 tahun ke depan?</li>
+                            <li>Sinkronisasi mimpi besar organisasi dengan kapasitas operasional di tingkat Cabang.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- KELOMPOK 2 -->
-            <div class="premium-card vertical-accent accordion-item" id="kel-2">
+            <div class="premium-card accordion-item" id="kel-2">
                 <div class="accordion-header" onclick="toggleAccordion('kel-2')">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fas fa-id-card text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl shadow-lg">
+                            <i class="fas fa-id-card"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">Kelompok 2: Keanggotaan</h2>
-                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-widest mt-0.5">Rujukan: Bab V (Pasal 14–16)</p>
+                            <h2 class="text-xl font-extrabold text-slate-800">02. Kajian Kedaulatan Anggota & Target Capaian</h2>
+                            <p class="text-xs text-rose-600 font-bold uppercase tracking-widest mt-1">Fokus: Hak & Kewajiban Anggota, Sistematika Pencapaian Visi</p>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
+                    <i class="fas fa-chevron-down text-slate-300"></i>
                 </div>
-                <div class="accordion-content px-8 sm:px-14 pb-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border-t border-slate-50 pt-8 mt-2">
-                        <div class="lg:col-span-7 space-y-1">
-                            <div class="step-path step-active">
-                                <span class="step-marker">1</span>
-                                <span class="badge-capsule badge-red mb-3">Prioritas: Kajian AD/ART</span>
-                                <p class="text-sm font-semibold text-slate-700 leading-relaxed">Mengkaji secara teliti Bab V (Pasal 14–16). Fokus pada kaidah yang mengatur status dan hak keanggotaan.</p>
-                            </div>
-                            <div class="step-path">
-                                <span class="step-marker">2</span>
-                                <span class="badge-capsule badge-amber mb-3">Diskusi: Pertanyaan Pemantik</span>
-                                <div class="space-y-4 mt-4 text-justify font-medium">
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Sebutkan dan jelaskan secara komprehensif seluruh hak anggota PGRI sesuai aturan organisasi.</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Apa saja kewajiban anggota? Uraikan implikasi kewajiban tersebut bagi standar pelayanan pengurus.</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Jika hak anggota terabaikan, langkah konkret apa yang harus diambil cabang sesuai AD/ART?</p>
-                                </div>
-                            </div>
+                <div class="accordion-content p-8 pt-2">
+                    <div class="instruction-badge">Referensi AD/ART 2024</div>
+                    <div class="reference-grid">
+                        <div class="ref-box">
+                            <h4>Anggaran Dasar (AD)</h4>
+                            <p>Bab V dan XII</p>
                         </div>
-                        <div class="lg:col-span-5">
-                            <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 h-full shadow-inner text-center">
-                                <span class="badge-capsule badge-blue mb-5">Output: Mind Map</span>
-                                <p class="text-[0.8rem] text-slate-500 leading-relaxed font-medium">Gambarkan ekosistem keanggotaan yang seimbang antara hak dan kewajiban.</p>
-                            </div>
+                        <div class="ref-box">
+                            <h4>Anggaran Rumah Tangga (ART)</h4>
+                            <p>Bab IV dan XXII</p>
                         </div>
+                    </div>
+
+                    <div class="kajian-box">
+                        <h4 class="font-bold text-slate-900 mb-3 underline">Materi Kajian Utama:</h4>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-3">
+                            <li>Identifikasi kriteria keanggotaan dan hak konstitusional anggota yang wajib dipenuhi Cabang.</li>
+                            <li>Analisis kewajiban anggota (iuran) sebagai fondasi kedaulatan dan keberlanjutan organisasi.</li>
+                            <li>Bagaimana sistematika iuran menjadi instrumen utama dalam mencapai target visi organisasi?</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- KELOMPOK 3 -->
-            <div class="premium-card vertical-accent accordion-item" id="kel-3">
+            <div class="premium-card accordion-item" id="kel-3">
                 <div class="accordion-header" onclick="toggleAccordion('kel-3')">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fas fa-balance-scale text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl shadow-lg">
+                            <i class="fas fa-project-diagram"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">Kelompok 3: Tugas & Kewenangan</h2>
-                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-widest mt-0.5">Rujukan: Bab IV, VI (Pasal 9–13, 17–21)</p>
+                            <h2 class="text-xl font-extrabold text-slate-800">03. Kajian Strategi & Skema Program Kerja</h2>
+                            <p class="text-xs text-rose-600 font-bold uppercase tracking-widest mt-1">Fokus: Skema Program Kerja Cabang</p>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
+                    <i class="fas fa-chevron-down text-slate-300"></i>
                 </div>
-                <div class="accordion-content px-8 sm:px-14 pb-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border-t border-slate-50 pt-8 mt-2">
-                        <div class="lg:col-span-7 space-y-1">
-                            <div class="step-path step-active">
-                                <span class="step-marker">1</span>
-                                <span class="badge-capsule badge-red mb-3">Prioritas: Kajian AD/ART</span>
-                                <p class="text-sm font-semibold text-slate-700 leading-relaxed">Mengkaji teks asli Bab IV dan VI (Pasal 9–13, 17–21). Kuasai batasan wewenang antarhierarki organisasi.</p>
-                            </div>
-                            <div class="step-path">
-                                <span class="step-marker">2</span>
-                                <span class="badge-capsule badge-amber mb-3">Diskusi: Pertanyaan Pemantik</span>
-                                <div class="space-y-4 mt-4 text-justify font-medium">
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Petakan wewenang cabang: Apa yang bersifat wajib, boleh, dan dilarang dilakukan?</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Bandingkan secara hierarkis kewenangan strategis antara pengurus cabang dan kabupaten.</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Sebutkan contoh nyata penyalahgunaan kewenangan dan mekanisme pencegahannya.</p>
-                                </div>
-                            </div>
+                <div class="accordion-content p-8 pt-2">
+                    <div class="instruction-badge">Referensi AD/ART 2024</div>
+                    <div class="reference-grid">
+                        <div class="ref-box">
+                            <h4>Anggaran Dasar (AD)</h4>
+                            <p>Bab VI, VII, dan VIII</p>
                         </div>
-                        <div class="lg:col-span-5">
-                            <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 h-full shadow-inner text-center">
-                                <span class="badge-capsule badge-blue mb-5">Output: Mind Map</span>
-                                <p class="text-[0.8rem] text-slate-500 leading-relaxed font-medium">Visualisasikan struktur tata kelola yang tertib dan akuntabel.</p>
-                            </div>
+                        <div class="ref-box">
+                            <h4>Anggaran Rumah Tangga (ART)</h4>
+                            <p>Bab VIII, IX, XX, dan XXI</p>
                         </div>
+                    </div>
+
+                    <div class="kajian-box">
+                        <h4 class="font-bold text-slate-900 mb-3 underline">Materi Kajian Utama:</h4>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-3">
+                            <li>Membedah hirarki dan sistematika penyusunan rencana kerja di tingkat Cabang.</li>
+                            <li>Analisis peran Perangkat Kelengkapan Organisasi dalam menunjang keberhasilan program.</li>
+                            <li>Bagaimana menyusun skema program yang selaras antara kebutuhan anggota dan mandat organisasi?</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- KELOMPOK 4 -->
-            <div class="premium-card vertical-accent accordion-item" id="kel-4">
+            <div class="premium-card accordion-item" id="kel-4">
                 <div class="accordion-header" onclick="toggleAccordion('kel-4')">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fas fa-shield-alt text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl shadow-lg">
+                            <i class="fas fa-user-shield"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">Kelompok 4: Etika & Tata Kelola</h2>
-                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-widest mt-0.5">Rujukan: Bab IX, X, XI (Pasal 31–37)</p>
+                            <h2 class="text-xl font-extrabold text-slate-800">04. Kajian Tata Kelola & Pola Kerja Pengurus</h2>
+                            <p class="text-xs text-rose-600 font-bold uppercase tracking-widest mt-1">Fokus: Tanggung Jawab & Pola Kerja Pengurus Cabang</p>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
+                    <i class="fas fa-chevron-down text-slate-300"></i>
                 </div>
-                <div class="accordion-content px-8 sm:px-14 pb-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border-t border-slate-50 pt-8 mt-2">
-                        <div class="lg:col-span-7 space-y-1">
-                            <div class="step-path step-active">
-                                <span class="step-marker">1</span>
-                                <span class="badge-capsule badge-red mb-3">Prioritas: Kajian AD/ART</span>
-                                <p class="text-sm font-semibold text-slate-700 leading-relaxed">Mengkaji secara mendalam Bab IX, X, XI (Pasal 31–37). Fokus pada kode etik dan disiplin organisasi.</p>
-                            </div>
-                            <div class="step-path">
-                                <span class="step-marker">2</span>
-                                <span class="badge-capsule badge-amber mb-3">Diskusi: Pertanyaan Pemantik</span>
-                                <div class="space-y-4 mt-4 text-justify font-medium">
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Apa standar etika pengurus PGRI yang wajib dipatuhi selama masa jabatan?</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Uraikan contoh pelanggaran etika organisasi dan sanksinya sesuai aturan yang berlaku.</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Mengapa integritas pengurus menentukan tingkat kepercayaan anggota?</p>
-                                </div>
-                            </div>
+                <div class="accordion-content p-8 pt-2">
+                    <div class="instruction-badge">Referensi AD/ART 2024</div>
+                    <div class="reference-grid">
+                        <div class="ref-box">
+                            <h4>Anggaran Dasar (AD)</h4>
+                            <p>Bab XIII, XIV, XV, XVII, dan XIX</p>
                         </div>
-                        <div class="lg:col-span-5">
-                            <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 h-full shadow-inner text-center">
-                                <span class="badge-capsule badge-blue mb-5">Output: Mind Map</span>
-                                <p class="text-[0.8rem] text-slate-500 leading-relaxed font-medium">Tunjukkan komitmen profesionalisme melalui peta pikiran integritas.</p>
-                            </div>
+                        <div class="ref-box">
+                            <h4>Anggaran Rumah Tangga (ART)</h4>
+                            <p>Bab XI, XII, XV, XVI, dan XVIII</p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- KELOMPOK 5 -->
-            <div class="premium-card vertical-accent accordion-item" id="kel-5">
-                <div class="accordion-header" onclick="toggleAccordion('kel-5')">
-                    <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fas fa-user-shield text-2xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">Kelompok 5: Advokasi & Perlindungan</h2>
-                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-widest mt-0.5">Rujukan: Bab VIII, XV–XVIII (Pasal 26–30, 55–66)</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </div>
-                <div class="accordion-content px-8 sm:px-14 pb-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border-t border-slate-50 pt-8 mt-2">
-                        <div class="lg:col-span-7 space-y-1">
-                            <div class="step-path step-active">
-                                <span class="step-marker">1</span>
-                                <span class="badge-capsule badge-red mb-3">Prioritas: Kajian AD/ART</span>
-                                <p class="text-sm font-semibold text-slate-700 leading-relaxed">Mengkaji Bab VIII dan XV–XVIII (Pasal 26–30, 55–66). Kuasai prosedur pemberian bantuan hukum.</p>
-                            </div>
-                            <div class="step-path">
-                                <span class="step-marker">2</span>
-                                <span class="badge-capsule badge-amber mb-3">Diskusi: Pertanyaan Pemantik</span>
-                                <div class="space-y-4 mt-4 text-justify font-medium">
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Apa tanggung jawab konstitusional PGRI terhadap guru yang menghadapi masalah profesi?</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Tindakan taktis apa yang wajib dilakukan cabang pada 24 jam pertama menerima laporan?</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">Kapan waktu yang tepat bagi cabang untuk melibatkan LKBH PGRI secara formal?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5">
-                            <div class="bg-slate-50/80 p-8 rounded-3xl border border-slate-100 h-full shadow-inner text-center">
-                                <span class="badge-capsule badge-blue mb-5">Output: Mind Map</span>
-                                <p class="text-[0.8rem] text-slate-500 leading-relaxed font-medium">Gambarkan sistem respons cepat organisasi dalam melindungi hak-hak guru.</p>
-                            </div>
-                        </div>
+                    <div class="kajian-box">
+                        <h4 class="font-bold text-slate-900 mb-3 underline">Materi Kajian Utama:</h4>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-3">
+                            <li>Penajaman Tanggung Jawab Pengurus: Membedah tupoksi kolektif dan individual secara rinci.</li>
+                            <li>Analisis Pola Kerja: Bagaimana mekanisme koordinasi, rapat-rapat, dan pengambilan keputusan yang sah?</li>
+                            <li>Pemahaman sistem disiplin (DKGI) dan perlindungan hukum (LKBH) bagi fungsionaris organisasi.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- FOOTER -->
-        <footer class="mt-8 text-center border-t border-slate-200 pt-8 pb-10">
-            <div class="flex justify-center items-center gap-5 mb-6">
-                <div class="h-px w-10 bg-slate-200"></div>
-                <img src="https://raw.githubusercontent.com/edibrata/image/main/Logo%20PGRI%20Official.png" alt="Logo PGRI Minimal" class="h-10 grayscale opacity-30">
-                <div class="h-px w-10 bg-slate-200"></div>
+        <!-- FOOTER & MEKANISME PRESENTASI -->
+        <section class="mt-12 p-8 bg-slate-900 text-white rounded-[40px] shadow-2xl">
+            <h3 class="text-center font-black uppercase tracking-widest mb-8">Protokol Paparan Individu</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-[0.75rem]">
+                <div class="p-4 border border-slate-700 rounded-2xl">
+                    <h5 class="font-bold text-rose-500 mb-2 uppercase">1. Pendalaman</h5>
+                    <p class="opacity-70 text-justify">Setelah kajian kelompok selesai, setiap individu wajib menguasai satu sub-bagian dari bahan yang telah disusun bersama.</p>
+                </div>
+                <div class="p-4 border border-slate-700 rounded-2xl">
+                    <h5 class="font-bold text-rose-500 mb-2 uppercase">2. Visualisasi</h5>
+                    <p class="opacity-70 text-justify">Mind map digunakan sebagai kerangka presentasi. Penekanan diberikan pada pemahaman pasal dan implementasinya di lapangan.</p>
+                </div>
+                <div class="p-4 border border-slate-700 rounded-2xl">
+                    <h5 class="font-bold text-rose-500 mb-2 uppercase">3. Verifikasi</h5>
+                    <p class="opacity-70 text-justify">Presentasi individu bertujuan memverifikasi bahwa pengurus memahami kapasitas masing-masing dalam struktur organisasi.</p>
+                </div>
             </div>
-            <p class="text-[0.7rem] text-slate-400 mb-2 font-bold uppercase tracking-[0.2em]">© 2025 Persatuan Guru Republik Indonesia Kabupaten Pandeglang</p>
-            <p class="text-[0.75rem] text-slate-500 mb-6 font-semibold">Bidang Organisasi & Kaderisasi • Managed by Edi Brata</p>
-            
-            <div class="inline-block px-12 py-3.5 rounded-full border border-slate-200 bg-white shadow-sm">
-                <p class="text-[0.8rem] font-black tracking-[0.3em] text-slate-400 uppercase leading-none">
-                    Hidup Guru! • Hidup PGRI! • Solidaritas!
-                </p>
+            <div class="mt-10 text-center">
+                <p class="text-[0.6rem] font-black uppercase tracking-[0.4em] opacity-40">Hidup Guru! • Hidup PGRI! • Solidaritas!</p>
             </div>
-        </footer>
+        </section>
 
     </main>
 
@@ -580,18 +438,13 @@
             const isActive = clickedItem.classList.contains('active');
             
             items.forEach(item => {
-                if (item.id !== id) {
-                    item.classList.remove('active');
-                }
+                item.classList.remove('active');
             });
 
-            if (isActive) {
-                clickedItem.classList.remove('active');
-            } else {
+            if (!isActive) {
                 clickedItem.classList.add('active');
             }
         }
     </script>
-
 </body>
 </html>
